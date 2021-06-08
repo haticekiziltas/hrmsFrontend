@@ -6,11 +6,44 @@
   height: 40vmin;
   pointer-events: none;
 }
+@font-face {
+  font-family: SegoeUI Light;
+  src:
+      local("Segoe UI Light"),
+      url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2) format("woff2"),
+      url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff) format("woff"),
+      url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf) format("truetype");
+  font-weight: 100;
+}
+@font-face {
+  font-family: SegoeUI Bold;
+  src:
+      local("Segoe UI Bold"),
+      url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2) format("woff2"),
+      url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff) format("woff"),
+      url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.ttf) format("truetype");
+  font-weight: 600;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+.ui.main.container{
+  margin-top: 5em;
+}
+.ui {
+  font-family: 'Segoe UI' !important;
+}
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+
+  text-align: center;
 }
 
 .App-header {
