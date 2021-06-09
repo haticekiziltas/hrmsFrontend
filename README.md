@@ -1,7 +1,7 @@
 
 ## UML DİAGRAM
 
-![UML Diagram](https://imgur.com/eoqaLYR.png)
+![UML Diagram](https://imgur.com/X7gjUPt.png)
 
 
 # Getting Started with Create React App

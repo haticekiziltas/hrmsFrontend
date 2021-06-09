@@ -13,7 +13,7 @@ export default function CvList() {
     cvService.getAll().then(result => setCvs(result.data.data))
 
 
-  }, [])
+  }, [cvs])
 
   const handleClick = (e, titleProps) => {
     const { index } = titleProps

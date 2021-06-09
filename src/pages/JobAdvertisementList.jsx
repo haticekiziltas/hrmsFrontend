@@ -8,7 +8,7 @@ export default function JobAdvertisementList() {
   useEffect(() => {
     let jobAdvertisementService = new JobAdvertisementService()
     jobAdvertisementService.getAll().then(result => setjobAdvertisements(result.data.data))
-  }, [])
+  }, [jobadvertisements])
   return (
   <Container style={{marginTop:20}}> 
     <Item.Group>
