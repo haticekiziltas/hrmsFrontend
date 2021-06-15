@@ -1,5 +1,6 @@
 import CvList from "./pages/CvList";
 import JobAdvertisementList from "./pages/JobAdvertisementList";
+import JobAdvertisementAdd from "./pages/JobAdvertisementAdd";
 
 
 export const routes = [
@@ -24,6 +25,15 @@ export const routes = [
     title: "İş İlanları",
     isHeaderElement: true,
   },
+
+  {
+    path: "/jobAdvertisementAdd",
+    exact: true,
+    component: <JobAdvertisementAdd/>,
+    title: "İlan Ekle",
+    isHeaderElement: true,
+  },
+  
  
 
 ];

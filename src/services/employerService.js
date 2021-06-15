@@ -1,7 +1,7 @@
 import axios from "./axios/axios" 
 
 export default class EmployerService{
- getAll() {
+ getEmployers() {
      return axios.get("/employers/getall")
  }
 }

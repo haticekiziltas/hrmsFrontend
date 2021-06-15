@@ -1,7 +1,7 @@
 import axios from "./axios/axios" 
 
 export default class EmployeeService{
- getAll() {
+ getEmployees() {
      return axios.get("/employees/getAll")
  }
 }
