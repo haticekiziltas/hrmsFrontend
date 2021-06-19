@@ -3,10 +3,12 @@ import { Grid } from 'semantic-ui-react'
 import Filter from './Filter'
 import { Route } from 'react-router'
 import CvList from '../pages/CvList'
-import JobAdvertisementAdd from '../pages/JobAdvertisementAdd'
-import JobAdvertisementList from '../pages/JobAdvertisementList'
+import JobAdvertisementAdd from '../pages/JobAdvertisements/JobAdvertisementAdd'
+import JobAdvertisementList from '../pages/JobAdvertisements/JobAdvertisementList'
 import HomePage from '../pages/HomePage'
-import ConfirmJobAdvertisement from '../pages/ConfirmJobAdvertisement'
+import ConfirmJobAdvertisement from '../pages/JobAdvertisements/ConfirmJobAdvertisement'
+import Footer from './Footer'
+
 export default function Dashboard() {
 
     return (
@@ -16,6 +18,7 @@ export default function Dashboard() {
           <Grid.Row>
             <Grid.Column >
             <Route exact path="/" component={HomePage}/>
+            <Route exact path="/" component={Footer}/>
             </Grid.Column>
   
         
@@ -25,6 +28,7 @@ export default function Dashboard() {
                  
                 <Route exact path="/jobadvertisementList" component={Filter}/>
                 <Route exact path="/cvList" component={Filter}/>
+                <Route exact path="/wayOfWorking" component={Filter}/>
                 </Grid.Column>
                
               

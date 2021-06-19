@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Accordion, Menu } from 'semantic-ui-react'
 import City from '../pages/City'
 import JobPosition from '../pages/JobPosition'
+import WayOfWorking from '../pages/WayOfWorking'
 
 
 export default function Filter() {
@@ -24,14 +25,13 @@ export default function Filter() {
         <Accordion as={Menu} vertical style={{width:"70%"}}>
         <Menu.Item>
           <Accordion.Title
-            active={activeIndex === 0}
-            content='Pozisyonlar'
-            index={0}
+            active={activeIndex === 1}
+            content='Tarih'
+            index={1}
             onClick={handleClick}
           />
-          <Accordion.Content active={activeIndex === 0}  >
-            <JobPosition></JobPosition>
-          </Accordion.Content>
+          <Accordion.Content active={activeIndex === 1}  > 
+        </Accordion.Content>
         </Menu.Item>
   
         <Menu.Item>
@@ -41,9 +41,44 @@ export default function Filter() {
             index={1}
             onClick={handleClick}
           />
-          <Accordion.Content active={activeIndex === 1}  > 
           <City></City>
+          <Accordion.Content active={activeIndex === 1}  > 
           </Accordion.Content>
+          </Menu.Item>
+
+          <Menu.Item>
+          <Accordion.Title
+            active={activeIndex === 0}
+            content='Pozisyonlar'
+            index={0}
+            onClick={handleClick}
+          />
+          <Accordion.Content active={activeIndex === 0}  >
+            <JobPosition></JobPosition>
+          </Accordion.Content>
+        </Menu.Item>
+
+          <Menu.Item>
+          <Accordion.Title
+            active={activeIndex === 1}
+            content='Çalışma Şekli'
+            index={1}
+            onClick={handleClick}
+          />
+          <Accordion.Content active={activeIndex === 1}  > 
+          <WayOfWorking></WayOfWorking>
+          </Accordion.Content>
+          </Menu.Item>
+
+          <Menu.Item>
+          <Accordion.Title
+            active={activeIndex === 1}
+            content='Eğitim Seviyesi'
+            index={1}
+            onClick={handleClick}
+          />
+          <Accordion.Content active={activeIndex === 1}  > 
+        </Accordion.Content>
         </Menu.Item>
       </Accordion>
       

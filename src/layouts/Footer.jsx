@@ -1,5 +1,5 @@
 import React from 'react'
-import {  Container, Grid, Header, List,Segment,} from 'semantic-ui-react'
+import {  Container, Grid, Header, List,Segment,Button} from 'semantic-ui-react'
 
 export default function Footer() {
     return (
@@ -10,7 +10,7 @@ export default function Footer() {
         <Grid divided inverted stackable>
           <Grid.Row>
             <Grid.Column width={3}>
-              <Header inverted as='h4' content='About' />
+              <Header inverted as='h4' content='Hakkımızda' />
               <List link inverted>
                 <List.Item as='a'>Sitemap</List.Item>
                 <List.Item as='a'>Contact Us</List.Item>
@@ -27,7 +27,19 @@ export default function Footer() {
                 <List.Item as='a'>Favorite X-Men</List.Item>
               </List>
             </Grid.Column>
-            <Grid.Column width={7}>
+            <Grid.Column width={3}>
+              <Header inverted as="h4" content="Bize Ulaşın" />
+              <br />
+              <Button circular color="facebook" icon="facebook" />
+
+              <Button circular color="twitter" icon="twitter" />
+
+              <Button circular color="linkedin" icon="linkedin" />
+
+              <Button circular color="google plus" icon="google plus" />
+            </Grid.Column>
+
+            <Grid.Column width={3}>
               <Header as='h4' inverted>
                 Footer Header
               </Header>

@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from 'react'
-import JobAdvertisementService from '../services/jobAdvertisementService'
-import { Item, Container,Segment,Label } from 'semantic-ui-react'
+import JobAdvertisementService from '../../services/jobAdvertisementService'
+import { Item, Container,Segment,Label,Button,Icon } from 'semantic-ui-react'
 
-export default function JobAdvertisementList() {
+export default function ConfirmJobAdvertisement() {
 
 
   const [jobAdvertisements, setJobAdvertisements] = useState([])
   useEffect(() => {
     let jobAdvertisementService = new JobAdvertisementService();
-    jobAdvertisementService.getJobAdvertisements().then(result => setJobAdvertisements(result.data.data))
-  }, [])
+    jobAdvertisementService.getAllPassiveJobAdvertisements().then(result => setJobAdvertisements(result.data.data))
+  }, [jobAdvertisements])
+  
+  const handleClick = function (id) {
+    let jobAdvertisementService = new JobAdvertisementService();
+    jobAdvertisementService.getAllUpdateActiveJobAdvertisements(id, "true").then()
+};
 
   const itemStyle = {
     borderRadius:20,
@@ -70,7 +75,26 @@ export default function JobAdvertisementList() {
       </Container>
     </Item.Content>
   </Item>
+  <Container style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", marginTop: "10px" }}    >
+                            <Item.Extra   >
 
+                                <Button circular basic  >
+                                    <Icon style={{ color: "#008080" }} name='delete' />
+                                    Reddet
+                                </Button>
+
+                            </Item.Extra>
+                            <Item.Extra >
+
+
+                                <Button onClick={e => handleClick(jobAdvertisement.id)} circular style={{
+                                    backgroundColor: "#008080",
+                                    borderColor: "#008080",
+                                    color: "white",
+                                }} >
+                                    <Icon name='checkmark' />Onayla</Button>
+                            </Item.Extra>
+                        </Container>
 </Item.Group>
 
  ))

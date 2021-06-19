@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Formik } from 'formik';
-import CityService from '../services/cityService';
+import CityService from '../../services/cityService';
 import { Select, Button } from 'evergreen-ui';
 import * as Yup from 'yup';
 import { Form,  Label, Container, TextArea, Grid, Segment } from 'semantic-ui-react';
-import JobPositionService from '../services/jobPositionService';
-import WayOfWorkingService from '../services/wayOfWorkingService';
-import WorkingTimeService from '../services/workingTimeService';
-import JobAdvertisementService from '../services/jobAdvertisementService';
+import JobPositionService from '../../services/jobPositionService';
+import WayOfWorkingService from '../../services/wayOfWorkingService';
+import WorkingTimeService from '../../services/workingTimeService';
+import JobAdvertisementService from '../../services/jobAdvertisementService';
 import swal from 'sweetalert';
 
 

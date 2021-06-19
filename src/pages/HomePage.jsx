@@ -12,7 +12,7 @@ export default function HomePage() {
             
         <Header
           as='h1'
-          content='Imagine-a-Company'
+          content='Hayalindeki İşi Bul'
           inverted
           style={{
               fontFamily:"Poppins",
@@ -36,7 +36,7 @@ export default function HomePage() {
           }}
         />
         <Button inverted  size='huge'>
-          Get Started
+          Hemen Başla
           <Icon name='right arrow' />
         </Button>
       </Container>
