@@ -6,8 +6,8 @@ export default function HomePage() {
     <Segment  inverted style={{bottom:0,top:-39,maxHeight:850,display:"flex",flexWrap:"wrap",backgroundImage: "url(" + "https://imgur.com/esftWyw.png" + ")",backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',height:"100%",width:"100%",border:"none"}}>
-
-      
+         
+          
         <Container style={{alignSelf:"center",paddingBottom:80}} text>
             
         <Header

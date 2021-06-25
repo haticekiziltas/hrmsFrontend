@@ -1,15 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import JobAdvertisementService from '../../services/jobAdvertisementService'
-import { Item, Container,Segment,Label } from 'semantic-ui-react'
+import { Item, Container,Segment,Label,Button } from 'semantic-ui-react'
+import City from '../City'
+import JobPosition from '../JobPosition'
 
 export default function JobAdvertisementList() {
 
 
-  const [jobAdvertisements, setJobAdvertisements] = useState([])
+  const [jobAdvertisement, setJobAdvertisements] = useState([])
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const [filters, setFilters] = useState('')
+  const handleFilters = (filters, category) => {
+  setFilters(filters)
+
+  }
+  const handleClick = function (e) {
+    console.log(e.target.value);
+
+  };
+
+
   useEffect(() => {
     let jobAdvertisementService = new JobAdvertisementService();
     jobAdvertisementService.getJobAdvertisements().then(result => setJobAdvertisements(result.data.data))
-  }, [])
+  }, [jobAdvertisement])
 
   const itemStyle = {
     borderRadius:20,
@@ -24,12 +39,19 @@ export default function JobAdvertisementList() {
 
   return (
 
-  
-    
     <Segment basic style={{maxWidth:850,}}>
-     
+        <JobPosition handleFilters={filters => handleFilters(filters, "continents")}></JobPosition>
+     <City handleFilters={filters => handleFilters(filters, "continents")}></City>
+  
 {
- jobAdvertisements.map(jobAdvertisement => (
+    jobAdvertisement.filter(value => {
+      if (setSearchTerm === '') {
+          return value
+      } else if (value.jobName.toLocaleLowerCase().includes(filters.toLocaleLowerCase()) || value.cityName.toLocaleLowerCase().includes(filters.toLocaleLowerCase())){
+
+          return value
+    }
+      }).map(jobAdvertisement, index => (
   
   <Item.Group key={jobAdvertisement.id}  divided>
  
@@ -73,10 +95,9 @@ export default function JobAdvertisementList() {
 
 </Item.Group>
 
- ))
-}
+ ))}
              
-    </Segment>
+ </Segment>
 
   )
 }
