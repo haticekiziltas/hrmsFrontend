@@ -15,7 +15,7 @@ export default function JobAdvertisementList() {
           return 'Şimdi';
       const intervals = {
           'yıl': 31536000,
-          'ay': 2592000,
+          'ay': 2592000,  
           'hafta': 604800,
           'gün': 86400,
           'saat': 3600,
