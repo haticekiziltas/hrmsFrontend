@@ -1,12 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import JobAdvertisementService from '../../services/jobAdvertisementService'
-import { Item, Container,Segment,Label, Pagination} from 'semantic-ui-react'
+import { Item, Container,Segment,Label, Pagination, Button} from 'semantic-ui-react'
 import {Select} from 'evergreen-ui'
 import City from '../City'
 import JobPosition from '../JobPosition'
+import { useDispatch } from 'react-redux'
+import swal from 'sweetalert'
+import { addTofavorite, removeFromFavorite } from '../../store/actions/favoriteActions'
 
 export default function JobAdvertisementList() {
+   const dispatch = useDispatch()
 
+   const handleAddToFav =(jobAdvertisement) => {
+     dispatch(addTofavorite(jobAdvertisement));
+     swal( `${jobAdvertisement.description}+Favorilere Eklendi`);
+
+    }
+    const handleRemoveFromFav= (jobAdvertisement) => {
+        dispatch(removeFromFavorite(jobAdvertisement));
+        swal("Favorilerden Çıkarıldı !" +" "+jobAdvertisement.description);
+    }
   function calculateDay(value) {
 
     if (value) {
@@ -124,6 +137,9 @@ export default function JobAdvertisementList() {
       </Container>
     </Item.Content>
   </Item>
+
+  < Button onClick ={() => handleAddToFav(jobAdvertisement)}> favorilere ekle</Button>
+  < Button onClick ={() => handleRemoveFromFav(jobAdvertisement)}> favorilerden çıkar</Button>
 
 </Item.Group>
 

@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
-import {  NavLink, useHistory } from 'react-router-dom'
+import {  NavLink} from 'react-router-dom'
 import { Button, Menu} from 'semantic-ui-react'
 import SignedIn from './SignedIn'
 import SignedOut from './SignedOut'
+import Favorites from './Favorites'
+import { useHistory } from 'react-router'
+import { useSelector } from 'react-redux'
 
 
 
 export default function Navi() {
 
+    const favoriteItems = useSelector(state=> state.favorite)
     const [state, setState] = useState({})
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     let history = useHistory()
@@ -88,10 +92,16 @@ export default function Navi() {
                     
                     <h1 style={fontStyle2} >İlan Onayı</h1>
                     </Menu.Item>
+                    
+                    
 
 
 
             <Menu.Menu stackable="true" position="right">
+            { 
+                       favoriteItems.length>0 &&
+                       <Favorites />}  
+                        
            
                 {
 
@@ -106,7 +116,8 @@ export default function Navi() {
                     </div>:
                       
                         <SignedOut signIn={handleSignIn} />
-                      
+
+              
                     
                 
         
